@@ -3,28 +3,36 @@ var taken = Enumerable.Range(0, 10).Select(i => Task.Run(() => VoerEenLangeBerek
 
 Console.WriteLine("Eerst een pauze...");
 
-await Pauze();
+var delay = await Pauze();
 
-Console.WriteLine("Alle taken gestart");
+Console.WriteLine($"Pauze van {delay}ms afgelopen. Alle taken gestart!");
 
-await Task.WhenAll(taken);
+var resultaten = await Task.WhenAll(taken);
 
 Console.WriteLine("Klaar met alle taken");
+Console.WriteLine($"Totaal aantal priemgetallen: {resultaten.Sum()}");
+
 Console.ReadKey();
 
-static async Task Pauze()
+static async Task<int> Pauze()
 {
+    var delay = 5000;
+
     Console.WriteLine("Pauze gestart");
-    await Task.Delay(5000);
+    await Task.Delay(delay);
     Console.WriteLine("Pauze klaar");
+
+    return delay;
 }
 
 
-static void VoerEenLangeBerekeningUit(int van, int tot, string tekst)
+static int VoerEenLangeBerekeningUit(int van, int tot, string tekst)
 {
     var aantal = BerekenPriemgetallen(van, tot);
 
     Console.WriteLine($"{aantal} priemgetallen vanuit thread {Thread.CurrentThread.ManagedThreadId}: {tekst}");
+
+    return aantal;
 }
 
 static int BerekenPriemgetallen(int van, int tot)

@@ -29,6 +29,37 @@ static void SchrijfNaarConsole(string tekst)
 }
 ```
 
+Pas de code als volgt aan:
+
+```csharp
+
+var task1 = new Task<string>(() => SchrijfNaarConsole("Taak 1"));
+var task2 = new Task<string>(() => SchrijfNaarConsole("Taak 2"));
+
+task1.Start();
+task2.Start();
+
+SchrijfNaarConsole("Buiten taak 1 en taak 2");
+
+while (!task1.IsCompleted && !task2.IsCompleted)
+{
+    Thread.Sleep(100);
+}
+
+Console.WriteLine("Taak 1 is voltooid: " + task1.Result);
+Console.WriteLine("Taak 2 is voltooid: " + task2.Result);
+
+Console.ReadKey();
+
+
+static string SchrijfNaarConsole(string tekst)
+{
+    var volledigeTekst = $"Geschreven vanuit thread {Thread.CurrentThread.ManagedThreadId}: {tekst}";
+    Console.WriteLine(volledigeTekst);
+    return volledigeTekst;
+}
+```
+
 Maak een nieuwe console applicatie, of hergebruik de vorige.
 
 ```
@@ -143,5 +174,35 @@ static int BerekenPriemgetallen(int van, int tot)
     }
 
     return aantalPriemgetallen;
+}
+```
+
+Pas de code als volgt aan:
+
+```csharp
+var taken = Enumerable.Range(0, 10).Select(i => Task.Run(() => VoerEenLangeBerekeningUit(i * 100_000, (i + 1) * 100_000, $"Taak {i}")));
+
+Console.WriteLine("Eerst een pauze...");
+
+var delay = await Pauze();
+
+Console.WriteLine($"Pauze van {delay}ms afgelopen. Alle taken gestart!");
+
+var resultaten = await Task.WhenAll(taken);
+
+Console.WriteLine("Klaar met alle taken");
+Console.WriteLine($"Totaal aantal priemgetallen: {resultaten.Sum()}");
+
+Console.ReadKey();
+
+static async Task<int> Pauze()
+{
+    var delay = 5000;
+
+    Console.WriteLine("Pauze gestart");
+    await Task.Delay(delay);
+    Console.WriteLine("Pauze klaar");
+
+    return delay;
 }
 ```
