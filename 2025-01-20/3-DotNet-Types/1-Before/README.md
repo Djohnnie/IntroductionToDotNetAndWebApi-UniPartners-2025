@@ -311,7 +311,7 @@ static int NieuweDubbeleSom(int a, int b, Func<int, int, int> somDelegate)
 }
 ```
 
-## Reflection
+## Extension Methods
 
 Maak een nieuwe console applicatie:
 
@@ -319,3 +319,63 @@ Maak een nieuwe console applicatie:
 dotnet new console
 ```
 
+Voeg de volgende code toe:
+
+```csharp
+Console.Write("Geef een stukje tekst in kleine letters: ");
+string invoer = Console.ReadLine();
+
+string resultaat = GeefElkWoordHoofdletters(invoer);
+Console.WriteLine($"Elk woord met hoofletter: {resultaat}");
+
+Console.ReadKey();
+
+static string GeefElkWoordHoofdletters(string invoer)
+{
+    string[] woorden = invoer.Split(' ');
+    string resultaat = "";
+
+    foreach (string woord in woorden)
+    {
+        string eersteLetter = woord.Substring(0, 1).ToUpper();
+        string restVanHetWoord = woord.Substring(1);
+        resultaat += eersteLetter + restVanHetWoord + " ";
+    }
+
+    return resultaat;
+}
+```
+
+Maak een nieuwe klasse met de 'GeefElkWoordHoofdletters' methode als volgt:
+
+```csharp
+static class StringExtensions
+{
+    public static string GeefElkWoordHoofdletters(this string invoer)
+    {
+        string[] woorden = invoer.Split(' ');
+        string resultaat = "";
+
+        foreach (string woord in woorden)
+        {
+            string eersteLetter = woord.Substring(0, 1).ToUpper();
+            string restVanHetWoord = woord.Substring(1);
+            resultaat += eersteLetter + restVanHetWoord + " ";
+        }
+
+        return resultaat;
+    }
+}
+```
+
+Pas de code zo aan dat we de extension method kunnen gebruiken:
+
+```csharp
+Console.Write("Geef een stukje tekst in kleine letters: ");
+string invoer = Console.ReadLine();
+
+string resultaat = invoer.GeefElkWoordHoofdletters();
+Console.WriteLine($"Elk woord met hoofletter: {resultaat}");
+
+Console.ReadKey();
+```
