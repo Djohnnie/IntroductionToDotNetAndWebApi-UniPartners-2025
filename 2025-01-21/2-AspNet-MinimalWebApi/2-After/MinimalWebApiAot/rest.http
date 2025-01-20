@@ -1,0 +1,13 @@
+@baseUrl = http://localhost:5246
+
+### GeefStatus
+GET {{baseUrl}}/status
+
+### VierVerjaardag
+POST {{baseUrl}}/verjaardag
+Content-Type: application/json
+
+{
+    "naam": "Steven",
+    "leeftijd": 23
+}
