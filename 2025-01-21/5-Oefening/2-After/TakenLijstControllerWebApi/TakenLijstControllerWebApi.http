@@ -1,0 +1,6 @@
+@TakenLijstControllerWebApi_HostAddress = http://localhost:5277
+
+GET {{TakenLijstControllerWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

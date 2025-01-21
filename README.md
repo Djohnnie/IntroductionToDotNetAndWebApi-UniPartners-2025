@@ -14,6 +14,7 @@ Introduction to .NET and ASP.NET WebApi - UniPartners 2025
     - [(Link)](./2025-01-21/2-AspNet-MinimalWebApi/1-Before/README.md) ASP.NET Minimal Api's (Introductie, DI)
     - [(Link)](./2025-01-21/3-AspNet-WebApi/1-Before/README.md) ASP.NET WebApi (Controllers, Actions, DI, Swagger)
     - [(Link)](./2025-01-21/4-AspNetMiddleware/1-Before/README.md) ASP.NET Middlewares (Request/Response pipeline)
+    - [(link)](./2025-01-21/5-Oefening/1-Before/README.md) Oefening
 - 27 januari (.NET Applicatieontwikkeling)
     - ADO.NET en Entity Framework (SqlClient, SqlConnection, SqlCommand, ORM, DbContext, Entity mapping)
     - LINQ (LINQ, Fluent API's, Lambda Expressions, Expression Trees)
