@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetWebApiMiddleware", "AspNetWebApiMiddleware.csproj", "{EAFE8D36-23E2-BFF1-206C-33C62E57A66F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAFE8D36-23E2-BFF1-206C-33C62E57A66F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAFE8D36-23E2-BFF1-206C-33C62E57A66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAFE8D36-23E2-BFF1-206C-33C62E57A66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAFE8D36-23E2-BFF1-206C-33C62E57A66F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {281B3516-457D-456B-A4AB-E9A7512289C9}
+	EndGlobalSection
+EndGlobal

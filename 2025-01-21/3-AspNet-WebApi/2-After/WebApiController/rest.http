@@ -1,0 +1,21 @@
+@baseUrl = http://localhost:5209
+
+### GeefStatus
+GET {{baseUrl}}/status
+
+### BerekenSom
+@getal1 = 5
+@getal2 = 3
+GET {{baseUrl}}/som?getal1={{getal1}}&getal2={{getal2}}
+
+### VierVerjaardag
+POST {{baseUrl}}/persoon/verjaardag
+Content-Type: application/json
+
+{
+    "naam": "Jozef",
+    "leeftijd": 12
+}
+
+### GenereerPersoon
+GET {{baseUrl}}/persoon
