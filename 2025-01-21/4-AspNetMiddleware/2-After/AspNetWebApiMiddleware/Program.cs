@@ -1,6 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
+builder.Services.AddTransient<Test>();
 
 var app = builder.Build();
 
@@ -26,16 +27,18 @@ class FirstMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger<FirstMiddleware> _logger;
+    private readonly Test _test;
 
     public FirstMiddleware(
-        RequestDelegate next,
+        RequestDelegate next,Test test,
         ILogger<FirstMiddleware> logger)
     {
+        _test = test;
         _logger = logger;
         _next = next;
     }
 
-    public async Task InvokeAsync(HttpContext context)
+    public async Task InvokeAsync(HttpContext context, Test test)
     {
         _logger.LogInformation($"{nameof(FirstMiddleware)} - Request");
         _logger.LogInformation($"{context.Request.Protocol} {context.Request.Scheme}://{context.Request.Host}{context.Request.Path}");
@@ -74,4 +77,10 @@ class SecondMiddleware
 
         _logger.LogInformation($"{nameof(SecondMiddleware)} - Response");
     }
+}
+
+
+class Test
+{
+
 }

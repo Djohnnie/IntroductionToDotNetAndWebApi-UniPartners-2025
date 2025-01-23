@@ -1,6 +1,42 @@
-@TakenLijstControllerWebApi_HostAddress = http://localhost:5277
+@baseAddress = http://localhost:5277
+@code = 013d7df5-540d-4ab8-9413-2b42a5e2099b
 
-GET {{TakenLijstControllerWebApi_HostAddress}}/weatherforecast/
+
+### Geef de lijst van taken
+GET {{baseAddress}}/taken/
 Accept: application/json
 
-###
+
+### Voeg een taak toe
+POST {{baseAddress}}/taken/
+Content-Type: application/json
+
+{
+  "titel": "De afwas doen",
+  "isVoltooid": false
+}
+
+
+### Geef een specifieke taak
+GET {{baseAddress}}/taken/{{code}}
+Accept: application/json
+
+
+### Wijzig een taak
+PUT {{baseAddress}}/taken/{{code}}
+Content-Type: application/json
+
+{
+  "titel": "De afwas ZEKER doen",
+  "isVoltooid": false
+}
+
+
+### Voltooi een taak
+PUT {{baseAddress}}/taken/{{code}}/voltooi
+Accept: application/json
+
+
+### Verwijder een taak
+DELETE {{baseAddress}}/taken/{{code}}
+Accept: application/json

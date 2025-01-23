@@ -1,14 +1,17 @@
+using TakenLijstControllerWebApi.Beheer;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Registreer het TakenBeheer in de Dependency Injection container als singleton.
+// Op deze manier zal elke request dezelfde instantie van het TakenBeheer gebruiken
+// en dus altijd toegang hebben tot de volledige lijst van taken.
+builder.Services.AddSingleton<TakenBeheer>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();

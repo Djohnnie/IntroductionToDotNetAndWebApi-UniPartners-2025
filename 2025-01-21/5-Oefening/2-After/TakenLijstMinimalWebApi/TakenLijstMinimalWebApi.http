@@ -1,6 +1,42 @@
-@TakenLijstMinimalWebApi_HostAddress = http://localhost:5008
+@baseAddress = http://localhost:5008
+@code = 39b1aff8-c2dd-4c5f-91da-8a9c82895c75
 
-GET {{TakenLijstMinimalWebApi_HostAddress}}/weatherforecast/
+
+### Geef de lijst van taken
+GET {{baseAddress}}/taken/
 Accept: application/json
 
-###
+
+### Voeg een taak toe
+POST {{baseAddress}}/taken/
+Content-Type: application/json
+
+{
+  "titel": "De afwas doen",
+  "isVoltooid": false
+}
+
+
+### Geef een specifieke taak
+GET {{baseAddress}}/taken/{{code}}
+Accept: application/json
+
+
+### Wijzig een taak
+PUT {{baseAddress}}/taken/{{code}}
+Content-Type: application/json
+
+{
+  "titel": "De afwas ZEKER doen",
+  "isVoltooid": false
+}
+
+
+### Voltooi een taak
+PUT {{baseAddress}}/taken/{{code}}/voltooi
+Accept: application/json
+
+
+### Verwijder een taak
+DELETE {{baseAddress}}/taken/{{code}}
+Accept: application/json
