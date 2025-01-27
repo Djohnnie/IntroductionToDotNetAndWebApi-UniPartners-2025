@@ -16,10 +16,10 @@ Introduction to .NET and ASP.NET WebApi - UniPartners 2025
     - [(Link)](./2025-01-21/4-AspNetMiddleware/1-Before/README.md) ASP.NET Middlewares (Request/Response pipeline)
     - [(link)](./2025-01-21/5-Oefening/1-Before/README.md) Oefening
 - 27 januari (.NET Applicatieontwikkeling)
-    - ADO.NET en Entity Framework (SqlClient, SqlConnection, SqlCommand, ORM, DbContext, Entity mapping)
-    - LINQ (LINQ, Fluent API's, Lambda Expressions, Expression Trees)
-    - Repository pattern (Abstraction, DI, CRUD)
-    - Unit testing (xUnit, Mocking, Moq)
+    - [(Link)](./2025-01-27/1-AdoNet/1-Before/README.md) ADO.NET (SqlClient, SqlConnection, SqlCommand)
+    - [(Link)](./2025-01-27/2-Entity-Framework//1-Before/README.md) Entity Framework (ORM, DbContext, Entity mapping)
+    - [(Link)](./2025-01-27/3-Linq//1-Before/README.md) LINQ (LINQ, Fluent API's, Lambda Expressions, Expression Trees)
+    - [(Link)](./2025-01-27/4-Repository-Pattern//1-Before/README.md) Repository pattern (Abstraction, DI, CRUD)
 - 28 januari (ASP.NET WebApi vervolg)
     - Busines Logic en data (Entities, Models, DTO's, Mapping)
     - ASP.NET Authentication en JWT
