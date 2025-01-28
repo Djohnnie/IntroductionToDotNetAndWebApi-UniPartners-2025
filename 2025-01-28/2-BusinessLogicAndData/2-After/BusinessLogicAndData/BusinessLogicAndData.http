@@ -1,0 +1,18 @@
+@host_address = http://localhost:5236
+
+### Geef alle verjaardagen
+GET {{host_address}}/verjaardagen/
+Accept: application/json
+
+### Geef een verjaardag
+GET {{host_address}}/verjaardagen/3
+Accept: application/json
+
+### Voeg een verjaardag toe
+POST {{host_address}}/verjaardagen/
+Content-Type: application/json
+
+{
+    "naam": "Pietje Puk",
+    "geboortedatum": "2000-01-01"
+}

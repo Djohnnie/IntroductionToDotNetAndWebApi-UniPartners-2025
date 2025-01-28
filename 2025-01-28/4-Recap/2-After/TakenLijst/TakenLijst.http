@@ -1,0 +1,42 @@
+@baseAddress = http://localhost:5298
+@code = 15f166ad-49dc-4eea-9ca8-becc356a65ec
+
+
+### Geef de lijst van taken
+GET {{baseAddress}}/taken/
+Accept: application/json
+
+
+### Voeg een taak toe
+POST {{baseAddress}}/taken/
+Content-Type: application/json
+
+{
+  "titel": "De afwas doen",
+  "isVoltooid": false
+}
+
+
+### Geef een specifieke taak
+GET {{baseAddress}}/taken/{{code}}
+Accept: application/json
+
+
+### Wijzig een taak
+PUT {{baseAddress}}/taken/{{code}}
+Content-Type: application/json
+
+{
+  "titel": "De afwas ZEKER doen",
+  "isVoltooid": false
+}
+
+
+### Voltooi een taak
+PUT {{baseAddress}}/taken/{{code}}/voltooi
+Accept: application/json
+
+
+### Verwijder een taak
+DELETE {{baseAddress}}/taken/{{code}}
+Accept: application/json

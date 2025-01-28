@@ -17,11 +17,11 @@ Introduction to .NET and ASP.NET WebApi - UniPartners 2025
     - [(link)](./2025-01-21/5-Oefening/1-Before/README.md) Oefening
 - 27 januari (.NET Applicatieontwikkeling)
     - [(Link)](./2025-01-27/1-AdoNet/1-Before/README.md) ADO.NET (SqlClient, SqlConnection, SqlCommand)
-    - [(Link)](./2025-01-27/2-Entity-Framework//1-Before/README.md) Entity Framework (ORM, DbContext, Entity mapping)
+    - [(Link)](./2025-01-27/2-Entity-Framework/1-Before/README.md) Entity Framework (ORM, DbContext, Entity mapping)
     - [(Link)](./2025-01-27/3-Linq//1-Before/README.md) LINQ (LINQ, Fluent API's, Lambda Expressions, Expression Trees)
-    - [(Link)](./2025-01-27/4-Repository-Pattern//1-Before/README.md) Repository pattern (Abstraction, DI, CRUD)
+    - [(Link)](./2025-01-27/4-Repository-Pattern/1-Before/README.md) Repository pattern (Abstraction, DI, CRUD)
 - 28 januari (ASP.NET WebApi vervolg)
-    - Busines Logic en data (Entities, Models, DTO's, Mapping)
-    - ASP.NET Authentication en JWT
-    - ASP.NET Authorization en JWT
-    - Recap, Q&A en retrospective
+    - [(Link)](./2025-01-28/1-AspNetWebApi-EntityFramework/1-Before/README.md) ASP.NET Minimal WebApi & Entity Framework
+    - [(Link)](./2025-01-28/2-BusinessLogicAndData/1-Before/README.md) Busines Logic en data (Entities, Models, DTO's, Mapping)
+    - [(Link)](./2025-01-28/3-AspNet-Auth/1-Before/README.md) ASP.NET Authenticatie
+    - [(Link)](./2025-01-28/4-Recap/1-Before/README.md) Recap & Q&A

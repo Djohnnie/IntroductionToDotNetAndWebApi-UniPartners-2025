@@ -1,0 +1,29 @@
+@host_address = http://localhost:5193
+
+### dotnet user-jwts create
+
+GET {{host_address}}/openapi/v1.json
+
+###
+
+GET {{host_address}}/status/
+Accept: application/json
+Authorization: Bearer CfDJ8Pljmd4aDdNAgqvwREsTQ8JWmXXIPlR565TK0siu7_eZ6HvtjGTOe3PcI8_Lb31kiR40bBi8kNyEP-X-4JFYIh5KtX7cwcA8_0985cfL1A7XP61zfKSqyOlcrBa0mojmcxEntjJ_JK3B7MgVGwSxzF8AZ0KfDWjWzplgj_QfK6L3IsjxZhSBeFsyqd7m5OlCGThcG7pnix23Ea8MeGpJq5UzTzgzw3qd7QPxyOWknaGukBqO5UZ6_NdntyiPnHB_rVOmYxwtFIH_wBhGO_LjIeDjYfLZBoXzR__OgoAgvb8ziVoLP9LVcCDFoRGAfe7EQEmKWWqbFGo-OP_D94KuOJPqxTBG3uM_bU6eflgL_IwzAAiwmRofSV_6ypB2QKbvvIuR19_XSz0Q3q_aASUYLSM9vXiACTJi-w5ONmkpowK2GvQoWakOxLvn4ZeeowMNtH4kFy-y5vCE-9Jfu7A3wEqRDKjWCgcOQtAAI5d0rdGaKEVAG9sJccZOZH3X56vC_Iow0I3pmxVjjTQs1i7Op7F8Hw81S9BChvxCusodN8wZ5FffBHkqt2pIrDLQIxjm8Cl485lzwty6XRwD7c6uWru4kXK8ZkfwAOsw2c5JXxOKDh1unM0Bll_TnOAJneGz8FQk_gzjRuZLfIyOCPYeY2nI6cCWhg2HWZUqICciflRvme3lnxK4mwZf2rRdRn3eaw
+
+###
+POST {{host_address}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "john@ikke.be",
+  "password": "Password123!"
+}
+
+###
+POST {{host_address}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "john@ikke.be",
+  "password": "Password123!"
+}
