@@ -1,0 +1,32 @@
+@host_address = http://localhost:5183
+
+###
+
+GET {{host_address}}/
+Accept: application/json
+
+###
+
+GET {{host_address}}/secured
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzaWQiOiI4ZWZkMWU5OC03MjRiLTQ4YzYtODliMS04M2JkN2QxYTZlZTMiLCJuYW1lIjoiam9obm55IiwianRpIjoiYWUxOTUzZjItNmNlZS00MTA0LTkzYjQtNTUwYWE3ZWE2MGZlIiwic3ViIjoiOGVmZDFlOTgtNzI0Yi00OGM2LTg5YjEtODNiZDdkMWE2ZWUzIiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5henVyZXdlYnNpdGVzLm5ldC8iLCJhdWQiOlsiaHR0cHM6Ly9pZGVudGl0eS5henVyZXdlYnNpdGVzLm5ldC8iLCJodHRwczovL2lkZW50aXR5LmF6dXJld2Vic2l0ZXMubmV0LyJdLCJuYmYiOjE3MzgwODE4NTUsImV4cCI6MTczODA5NjI1NSwiaWF0IjoxNzM4MDgxODU1fQ.5dZL7bzx_uDkJ4Yr5RCF0dWEBvRSY_6ceofOqJ7vBSVb4UwNJt2gO7UaadE4qt3vzJxjHb6RYvsAFmYioFvwww
+
+###
+
+POST {{host_address}}/register
+Content-Type: application/json
+
+{
+  "userName": "johnny",
+  "password": "<paswoord>"
+}
+
+###
+
+POST {{host_address}}/login
+Content-Type: application/json
+
+{
+  "userName": "johnny",
+  "password": "<paswoord>"
+}

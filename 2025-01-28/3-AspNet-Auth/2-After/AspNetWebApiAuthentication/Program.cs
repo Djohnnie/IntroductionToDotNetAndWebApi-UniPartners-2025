@@ -32,6 +32,7 @@ app.MapGroup("/auth").MapIdentityApi<Gebruiker>();
 
 app.Run();
 
+
 public class Gebruiker : IdentityUser
 {
 
